@@ -6,7 +6,7 @@ function RippleNames () {
 }
 
 RippleNames.prototype = {
-  lookupByAddress: function(rippleAddress) {
+  lookup: function(rippleAddress) {
 
     var url = this.base_url + '?username=' + rippleAddress;
 
@@ -16,7 +16,7 @@ RippleNames.prototype = {
         if(error) {
           return reject(new Error(error));
         }
-        resolve(response.body.username);
+        resolve(response.body);
       });
     });
   }
